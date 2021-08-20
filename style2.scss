@@ -1,0 +1,110 @@
+
+
+
+.tab-wrapper {
+    margin: 20px 5%;
+    
+    .tab-pane {
+      border: 1px solid #ddd;
+      border-top: none;
+      padding: 100px 0;
+      border-radius: 0 0 5px 5px;
+      position: relative;
+    }
+  }
+  .navimenu {
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    outline: transparent solid 5px;
+    transform-style: preserve-3d;
+    text-align: center;
+    
+    .gooey-menu-item,
+    .open-button {
+      border-radius: 100%;
+      position: absolute;
+      color: #fff;
+      text-align: center;
+      font-size: .9em;
+      transform: translate3d(0,0,0);
+      transition: transform ease-out 200ms;
+      backface-visibility: hidden;
+      outline: transparent solid 5px;
+      transform-style: preserve-3d;
+      left: 50%;
+      top: 40%;
+    }
+    .gooey-menu-item {
+      transition-duration: 180ms;
+      
+      &:hover {
+        background-color: #4682b4;
+        color: #00bcd4
+      }
+    }
+    
+    .open-button {
+      z-index: 2;
+      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+      transition-duration: 400ms;
+      transform: scale(1.1,1.1) translate3d(0,0,0);
+      cursor: pointer;
+      
+      &:hover {
+         transform: scale(1.2,1.2) translate3d(0,0,0);
+      }
+    }
+    .burger {
+      background: #fff;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -1.5px;
+      transition: transform 200ms;
+    }
+  
+    .burger-1 {
+      transform: translate3d(0,-8px,0);
+    }
+  
+    .burger-2 {
+      transform: translate3d(0,0,0);
+    }
+  
+    .burger-3 {
+      transform: translate3d(0,8px,0);
+    }
+  
+    .menu-open {
+      display: none
+    }    
+    .menu-open:checked + .open-button{
+      transition: 200ms linear;
+      transform: scale(.9,.9) translate3d(0,0,0);
+      
+      .burger-1 {
+        transform: translate3d(0,0,0) rotate(45deg);
+      }
+      .burger-2 {
+        transform: translate3d(0,0,0) scale(.1,1);
+      }
+      .burger-3 {
+        transform: translate3d(0,0,0) rotate(-45deg);
+      }
+    }
+    .fa {
+      font-size: 2em;
+    }
+  }
+  
+  
+  #gooey-v {
+    margin-top: 10px; 
+    padding-bottom: 300px;
+    .gooey-menu-item,
+    .open-button {
+      top: 10%;
+    }
+  }
+  
